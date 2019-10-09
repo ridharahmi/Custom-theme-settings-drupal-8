@@ -1,0 +1,21 @@
+name: mytheme
+type: theme
+description: "My Theme Drupal 8"
+package: Core
+core: '8.x'
+
+
+regions:
+  system_branding: 'System Branding'
+  main_menu: 'Main Menu'
+  breadcrumb: 'Breadcrumbs'
+  status_message: 'Status Message'
+  banner: 'Banner'
+  content_top: 'Content top'
+  content: 'Content'
+  content_bottom: 'Content bottom'
+  footer: 'Footer'
+  footer_copyright: 'Footer Copyright'
+  disabled 	: 'Disabled'
+
+

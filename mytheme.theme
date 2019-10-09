@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the  theme.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\core\Url;
+
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function mytheme_preprocess_block(&$variables)
+{
+    $variables['text_name'] = theme_get_setting('text_name');
+    $fid = theme_get_setting('secondary_logo');
+
+
+    if (!empty($fid)) {
+        $file = File::load($fid[0]);
+    }
+    if (!empty($file)) {
+        $variables['logo_name'] = $file->url();
+    }
+}
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function mytheme_preprocess_page(&$variables)
+{
+    $variables['text_name'] = theme_get_setting('text_name');
+    $fid = theme_get_setting('secondary_logo');
+
+
+    if (!empty($fid)) {
+        $file = File::load($fid[0]);
+    }
+    if (!empty($file)) {
+        $variables['logo_name'] = $file->url();
+    }
+    //kint($variables['logo_name']);
+
+}
+
